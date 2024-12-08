@@ -1,0 +1,4 @@
+.react-simple-star-rating {
+    display: flex !important; /* Ensure stars are displayed inline */
+    gap: 4px; /* Add spacing between stars */
+}
