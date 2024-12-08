@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaImage } from "react-icons/fa";
 import { Rating } from "react-simple-star-rating";
-
 import { toast, ToastContainer } from "react-toastify";
 
+
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddMovies = () => {
     const [formData, setFormData] = useState({
@@ -15,7 +16,8 @@ const AddMovies = () => {
         releaseYear: "",
         summary: "",
     });
-    const [rating, setRating] = useState(0,[]);
+    const [rating, setRating] = useState(0);
+    const { user } = useContext(AuthContext); // Access authenticated user data
 
     // Handle form input changes
     const handleChange = (e) => {
@@ -25,7 +27,7 @@ const AddMovies = () => {
 
     // Handle rating change
     const handleRatingChange = (rate) => {
-        setRating(rate); // Convert rating to a scale of 1-5
+        setRating(rate / 20); // Convert to a 1-5 scale
     };
 
     const validateForm = () => {
@@ -67,8 +69,12 @@ const AddMovies = () => {
 
         if (!validateForm()) return;
 
-        const movieData = { ...formData, rating };
-        console.log(movieData)
+        const movieData = {
+            ...formData,
+            rating,
+            email: user?.email, // Add the user's email
+        };
+
         fetch("http://localhost:5000/add-movie", {
             method: "POST",
             headers: {
@@ -103,7 +109,7 @@ const AddMovies = () => {
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-[#040303]">
-            <ToastContainer></ToastContainer>
+            <ToastContainer />
             <div className="w-full sm:w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12">
                 <div className="p-6 bg-[#3a4e48] rounded-md shadow-lg text-[#beb0a7]">
                     <h2 className="text-2xl font-bold mb-4 text-[#6a7b76]">Add a Movie</h2>
@@ -190,14 +196,11 @@ const AddMovies = () => {
                         {/* Rating */}
                         <div>
                             <label className="block mb-2 font-semibold">Rating (1-5)</label>
-                            <div >
+                            <div>
                                 <Rating
-                                    
                                     onClick={handleRatingChange}
-                                    ratingValue={rating * 200} // Convert back to 20-point scale for the component
+                                    ratingValue={rating * 20} // Convert to 20-point scale for the component
                                     size={30}
-                                    
-                                    
                                 />
                             </div>
                         </div>

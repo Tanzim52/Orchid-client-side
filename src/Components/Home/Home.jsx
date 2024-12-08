@@ -32,7 +32,7 @@ const Home = () => {
     };
 
     return (
-        <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-colors duration-500 pb-7`}>
+        <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-colors duration-500 pb-7 px-6`}>
             {/* Dark Mode Toggle */}
             <div className="p-4 flex justify-end">
                 <button

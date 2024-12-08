@@ -12,6 +12,8 @@ import AllMovies from './Components/All Movies/AllMovies';
 import AddMovies from './Components/Add Movies/AddMovies';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import AuthProvider from './Components/Provider/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path:'add-movie',
-        element:<AddMovies></AddMovies>
+        element:<PrivateRoute><AddMovies></AddMovies></PrivateRoute>
       },
       {
         path:'login',
@@ -48,6 +50,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
