@@ -40,8 +40,29 @@ const Home = () => {
                     onClick={() => setDarkMode(!darkMode)}
                 >
                     {darkMode ? <FaSun /> : <FaMoon />}
-                    {darkMode ? 'Light Mode' : 'Dark Mode'}
+                    {/* {darkMode ? 'Light Mode' : 'Dark Mode'} */}
                 </button>
+            </div>
+
+            <div className="text-center py-16  text-[#beb0a7]">
+                <h1
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#8b9d83] mb-4"
+                    style={{
+                        textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
+                    }}
+                >
+                    PopTime: Where Every Movie Matters
+                </h1>
+                <p
+                    className="text-lg sm:text-xl md:text-2xl text-[#beb0a7]"
+                    style={{
+                        fontStyle: "italic",
+                        textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+                    }}
+                >
+                    Discover, Rate, and Relive Cinematic Moments—Your Movie Adventure Starts
+                    Here!
+                </p>
             </div>
 
             {/* Slider */}
@@ -60,7 +81,7 @@ const Home = () => {
             {/* Featured Movies */}
             <section className="py-8">
                 <h2 className="text-3xl font-bold text-center mb-6">Featured Movies</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {featuredMovies.map((movie) => (
                         <div key={movie._id} className="bg-gray-100 dark:bg-gray-800 p-4 rounded shadow animate__animated animate__fadeInUp">
                             <img
@@ -75,7 +96,7 @@ const Home = () => {
                             <p>Rating: {movie.rating}/5</p>
                             <button
                                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-                                onClick={() => navigate(`/movie/${movie._id}`)}
+                                onClick={() => navigate(`/movies/${movie._id}`)}
                             >
                                 See Details
                             </button>

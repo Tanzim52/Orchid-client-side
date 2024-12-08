@@ -14,6 +14,7 @@ import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import AuthProvider from './Components/Provider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Details from './Components/Details/Details';
 
 
 const router = createBrowserRouter([
@@ -36,8 +37,13 @@ const router = createBrowserRouter([
         element:<PrivateRoute><AddMovies></AddMovies></PrivateRoute>
       },
       {
-        path:"/movies/:id",
+        path:'favorites',
         element:<PrivateRoute><AddMovies></AddMovies></PrivateRoute>
+      },
+      {
+        path:"/movies/:id",
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader:()=>fetch('http://localhost:5000/add-movie')
       },
       {
         path:'login',
