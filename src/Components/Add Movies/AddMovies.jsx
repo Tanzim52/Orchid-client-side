@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaImage } from "react-icons/fa";
 import { Rating } from "react-simple-star-rating";
+
 import { toast, ToastContainer } from "react-toastify";
-import "./AddMovies.css"
+
 import "react-toastify/dist/ReactToastify.css";
 
 const AddMovies = () => {
@@ -14,7 +15,7 @@ const AddMovies = () => {
         releaseYear: "",
         summary: "",
     });
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = useState(0,[]);
 
     // Handle form input changes
     const handleChange = (e) => {
@@ -151,6 +152,7 @@ const AddMovies = () => {
                                 <option value="horror">Horror</option>
                                 <option value="action">Action</option>
                                 <option value="thriller">Thriller</option>
+                                <option value="adventure">Adventure</option>
                             </select>
                         </div>
 
@@ -188,14 +190,13 @@ const AddMovies = () => {
                         {/* Rating */}
                         <div>
                             <label className="block mb-2 font-semibold">Rating (1-5)</label>
-                            <div className="flex" >
+                            <div >
                                 <Rating
-                                    className="flex"
+                                    
                                     onClick={handleRatingChange}
                                     ratingValue={rating * 200} // Convert back to 20-point scale for the component
                                     size={30}
-                                    fillColor="#8b9d83"
-                                    emptyColor="#beb0a7"
+                                    
                                     
                                 />
                             </div>
