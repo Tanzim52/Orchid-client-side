@@ -66,13 +66,13 @@ const Home = () => {
                             <img
                                 src={movie.poster}
                                 alt={movie.title}
-                                className="w-full h-64 object-cover rounded mb-4"
+                                className="w-full h-64 lg:w-[452px] lg:h-[672px] object-cover rounded mb-4"
                             />
                             <h3 className="text-xl font-semibold mb-2">{movie.title}</h3>
                             <p>Genre: {movie.genre}</p>
-                            <p>Duration: {movie.duration}</p>
+                            <p>Duration: {movie.duration} min</p>
                             <p>Release Year: {movie.releaseYear}</p>
-                            <p>Rating: {movie.rating}</p>
+                            <p>Rating: {movie.rating}/5</p>
                             <button
                                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
                                 onClick={() => navigate(`/movie/${movie._id}`)}
@@ -85,7 +85,7 @@ const Home = () => {
                 <div className="text-center mt-8">
                     <button
                         className="bg-blue-500 text-white px-6 py-3 rounded"
-                        onClick={() => navigate('/movies')}
+                        onClick={() => navigate('/all-movies')}
                     >
                         See All Movies
                     </button>
@@ -93,7 +93,7 @@ const Home = () => {
             </section>
 
             {/* Extra Section 1 */}
-            <section className="py-8 bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+            <section className="py-8 bg-gradient-to-r from-indigo-500 to-purple-500 text-white mb-7">
                 <h2 className="text-3xl font-bold text-center mb-6 animate__animated animate__fadeIn">Top Genres to Explore</h2>
                 <p className="text-center mb-4 animate__animated animate__fadeIn">
                     Discover movies from a variety of genres: Action, Drama, Comedy, and more.

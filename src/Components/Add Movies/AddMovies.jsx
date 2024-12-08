@@ -147,12 +147,12 @@ const AddMovies = () => {
                                 className="w-full p-2 rounded-md"
                             >
                                 <option value="">Select Genre</option>
-                                <option value="comedy">Comedy</option>
-                                <option value="drama">Drama</option>
-                                <option value="horror">Horror</option>
-                                <option value="action">Action</option>
-                                <option value="thriller">Thriller</option>
-                                <option value="adventure">Adventure</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Action">Action</option>
+                                <option value="Thriller">Thriller</option>
+                                <option value="Adventure">Adventure</option>
                             </select>
                         </div>
 
