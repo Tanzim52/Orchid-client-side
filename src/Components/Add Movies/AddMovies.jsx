@@ -27,7 +27,7 @@ const AddMovies = () => {
 
     // Handle rating change
     const handleRatingChange = (rate) => {
-        setRating(rate / 20); // Convert to a 1-5 scale
+        setRating(rate); 
     };
 
     const validateForm = () => {

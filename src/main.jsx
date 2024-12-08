@@ -36,6 +36,10 @@ const router = createBrowserRouter([
         element:<PrivateRoute><AddMovies></AddMovies></PrivateRoute>
       },
       {
+        path:"/movies/:id",
+        element:<PrivateRoute><AddMovies></AddMovies></PrivateRoute>
+      },
+      {
         path:'login',
         element:<Login></Login>
       },
