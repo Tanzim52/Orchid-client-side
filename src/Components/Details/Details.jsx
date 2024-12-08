@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, data } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react"; // Import for user email
+import { AuthContext } from "../Provider/AuthProvider";
+
 
 const Details = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [movie, setMovie] = useState(null);
+    const { user } = useContext(AuthContext); // Assuming the AuthContext provides the logged-in user
 
     // Fetch movie details by ID
     useEffect(() => {
         fetch(`http://localhost:5000/movies/${id}`)
             .then((response) => response.json())
             .then((data) => setMovie(data))
-            
             .catch((error) => {
                 console.error("Error fetching movie details:", error);
                 toast.error("Failed to fetch movie details.");
@@ -40,12 +43,22 @@ const Details = () => {
 
     // Add to Favorite
     const handleAddToFavorites = () => {
+        if (!user?.email) {
+            toast.error("Please log in to add movies to your favorites.");
+            return;
+        }
+
+        const favoriteData = {
+            ...movie,
+            userEmail: user.email, // Add the logged-in user's email
+        };
+
         fetch(`http://localhost:5000/favorites`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(movie),
+            body: JSON.stringify(favoriteData),
         })
             .then((response) => {
                 if (!response.ok) {
@@ -70,7 +83,7 @@ const Details = () => {
                     <img
                         src={movie.poster}
                         alt={movie.title}
-                        className="w-full h-72 object-cover lg:w-[452px] lg:h-[672px]  rounded-md mb-4"
+                        className="w-full h-72 object-cover lg:w-[452px] lg:h-[672px] rounded-md mb-4"
                     />
                     <h1 className="text-3xl font-bold text-[#8b9d83] mb-2">{movie.title}</h1>
                     <p><span className="font-semibold">Genre:</span> {movie.genre}</p>

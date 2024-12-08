@@ -15,6 +15,7 @@ import Register from './Components/Register/Register';
 import AuthProvider from './Components/Provider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Details from './Components/Details/Details';
+import Favorites from './Components/Favorites/Favorites';
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path:'favorites',
-        element:<PrivateRoute><AddMovies></AddMovies></PrivateRoute>
+        element:<PrivateRoute><Favorites></Favorites></PrivateRoute>
       },
       {
         path:"/movies/:id",
