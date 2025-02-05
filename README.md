@@ -1,9 +1,11 @@
 # Poptime - Orchid Client Side
 
+![PopTime Banner](https://i.ibb.co.com/zTpCfDvD/Pt.png)
+
 Poptime is a user-friendly **Movie Portal** designed to simplify the process of exploring movies, viewing details, adding new movies, and managing user favorites. The project provides a dynamic UI, authentication features, and seamless CRUD operations.
 
 ## 🔗 Live Website
-[Visit Poptime](#) *(Replace with actual deployed link)*
+[Visit Poptime](https://orchid-client.web.app/) 
 
 ## 🚀 Features
 - 🔍 **Browse Movies**: View a list of movies with details such as genre, duration, release year, and rating.
@@ -90,6 +92,6 @@ firebase deploy
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-📧 Need help? Contact **[your-email@example.com](mailto:your-email@example.com)** or create an issue on GitHub.
+📧 Need help? Contact **[mahin1575@gmail.com](mailto:mahin1575@gmail.com)** or create an issue on GitHub.
 
 Happy Coding! 🎉
