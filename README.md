@@ -1,8 +1,95 @@
-# React + Vite
+# Poptime - Orchid Client Side
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Poptime is a user-friendly **Movie Portal** designed to simplify the process of exploring movies, viewing details, adding new movies, and managing user favorites. The project provides a dynamic UI, authentication features, and seamless CRUD operations.
 
-Currently, two official plugins are available:
+## 🔗 Live Website
+[Visit Poptime](#) *(Replace with actual deployed link)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🔍 **Browse Movies**: View a list of movies with details such as genre, duration, release year, and rating.
+- 🎬 **Movie Details**: Click on any movie to see its full details.
+- ➕ **Add Movie**: Authenticated users can add new movies (Private Route).
+- ❤️ **Favorite Movies**: Save movies to a personalized favorite list.
+- 🔐 **Authentication**: Firebase authentication (Google Login, Email & Password Login, Registration).
+- 🛠 **CRUD Operations**: Users can add, delete, and manage movies.
+- 🌐 **Responsive Design**: Optimized for desktop, tablet, and mobile.
+- 🎭 **Dark/Light Mode**: Toggle between themes.
+
+## 🏗️ Tech Stack
+- **Frontend:** React, React Router, Tailwind CSS, Daisy UI
+- **State Management:** Context API
+- **Authentication:** Firebase Authentication
+- **Icons & Animations:** React Icons, Animate.css
+- **Backend:** *(Server-side repo required)*
+
+## 🔑 Environment Variables
+To run this project locally, create a `.env.local` file in the root directory and add the following:
+```
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_firebase_app_id
+```
+
+## ⚡ Getting Started
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/Orchid-client-side.git
+cd Orchid-client-side
+```
+
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
+
+### 3️⃣ Start the Development Server
+```sh
+npm run dev
+```
+The app will be running at **http://localhost:5173/**.
+
+## 📂 Project Structure
+```
+Orchid-client-side/
+│── src/
+│   ├── components/     # Reusable components
+│   ├── pages/          # Pages (Home, Login, Register, etc.)
+│   ├── hooks/          # Custom hooks
+│   ├── context/        # Context API setup
+│   ├── assets/         # Images and static files
+│   ├── firebase/       # Firebase config
+│   ├── App.jsx         # Main component
+│   ├── main.jsx        # Entry point
+│── public/             # Static files
+│── .env.local          # Environment variables
+│── package.json        # Dependencies and scripts
+│── README.md           # Project documentation
+```
+
+## 🎯 Deployment
+Poptime can be deployed on **Netlify, Firebase Hosting, or Vercel**.
+To deploy with Netlify:
+```sh
+netlify deploy --prod
+```
+Or with Firebase Hosting:
+```sh
+firebase deploy
+```
+
+## 🔥 Challenges & Future Enhancements
+- [ ] **Movie Update Feature**: Allow users to edit movie details.
+- [ ] **Search Functionality**: Implement search based on movie titles.
+- [ ] **Pagination**: Add pagination to optimize performance.
+- [ ] **Animations**: Improve UI interactions with framer-motion.
+
+## 📜 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+📧 Need help? Contact **[your-email@example.com](mailto:your-email@example.com)** or create an issue on GitHub.
+
+Happy Coding! 🎉
