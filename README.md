@@ -1,6 +1,6 @@
 # Poptime - Orchid Client Side
 
-![PopTime Banner](https://i.ibb.co.com/zTpCfDvD/Pt.png)
+![PopTime Banner](https://i.ibb.co.com/4nZPxBsX/pt1.png)
 
 Poptime is a user-friendly **Movie Portal** designed to simplify the process of exploring movies, viewing details, adding new movies, and managing user favorites. The project provides a dynamic UI, authentication features, and seamless CRUD operations.
 
